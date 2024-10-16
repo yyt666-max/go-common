@@ -53,7 +53,7 @@ func (m *postgresInit) OnComplete() {
 	m.InitDb()
 }
 func (m *postgresInit) InitDb() {
-	dialector := postgres.Open(m.config.getDBNS()) // 修改为postgres的连接
+	dialector := postgres.Open(m.config.getDBNS()) // 修改为postgres的连接1
 	db, err := gorm.Open(dialector, &gorm.Config{
 		Logger: logger.New(slog.New(os.Stderr, "\r\n", slog.LstdFlags), logger.Config{
 			SlowThreshold:             200 * time.Millisecond,
